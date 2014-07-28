@@ -229,8 +229,6 @@ var pool = function(opts) {
 };
 
 var create = function(opts) {
-  if (!opts) opts = {};
-
   var defaultOpts = {
     pool         : 1,
     maxErrors    : 3,
