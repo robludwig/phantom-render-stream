@@ -244,7 +244,6 @@ var create = function(opts) {
   opts = xtend(defaultOpts,opts);
 
   var tmp     = opts.tmp;
-  var format  = opts.format;
 
   var worker = pool(opts);
   var server = serve();
@@ -289,7 +288,7 @@ var create = function(opts) {
     var proxy = queued[id] = duplexify();
 
     var initialize = function(url) {
-      ropts = xtend({format:format, url:url, printMedia: opts.printMedia}, ropts);
+      ropts = xtend({format:opts.format, url:url, printMedia: opts.printMedia}, ropts);
       ropts.maxRenders = opts.maxRenders;
       ropts.filename = path.join(tmp, process.pid + '.' + hat()) + '.' + ropts.format;
       ropts.id = id;
