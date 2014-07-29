@@ -275,6 +275,7 @@ var create = function(opts) {
   });
 
   var render = function(url, ropts) {
+
     if(typeof url !== 'string') {
       ropts = url;
       url = null;
@@ -289,6 +290,7 @@ var create = function(opts) {
         url             : url,
         printMedia      : opts.printMedia,
         expects         : opts.expects,
+        timeout         : opts.timeout,
       }, ropts);
 
       ropts.maxRenders = opts.maxRenders;
